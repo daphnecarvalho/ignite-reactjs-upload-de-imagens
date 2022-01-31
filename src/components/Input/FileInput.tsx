@@ -199,6 +199,9 @@ const FileInputBase: ForwardRefRenderFunction<
                   alignItems="center"
                   justifyContent="center"
                   flexDir="column"
+                  _hover={{
+                    bgColor: 'pGray.700',
+                  }}
                 >
                   <Icon as={FiPlus} w={14} h={14} />
                   <Text as="span" pt={2} textAlign="center">
