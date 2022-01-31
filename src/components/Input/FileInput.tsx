@@ -29,6 +29,7 @@ import {
   UseFormTrigger,
 } from 'react-hook-form';
 import { FiAlertCircle, FiPlus } from 'react-icons/fi';
+
 import { api } from '../../services/api';
 
 export interface FileInputProps {
@@ -201,6 +202,7 @@ const FileInputBase: ForwardRefRenderFunction<
                   flexDir="column"
                   _hover={{
                     bgColor: 'pGray.700',
+                    borderRadius: 'md',
                   }}
                 >
                   <Icon as={FiPlus} w={14} h={14} />

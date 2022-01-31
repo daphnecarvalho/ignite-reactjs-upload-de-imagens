@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import {
   Box,
   Heading,
@@ -7,7 +8,6 @@ import {
   SkeletonText,
   Flex,
 } from '@chakra-ui/react';
-import { useState } from 'react';
 
 interface Card {
   title: string;

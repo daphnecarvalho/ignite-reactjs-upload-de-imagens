@@ -30,8 +30,9 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
           file[0].size < 10485760 || 'O arquivo deve ser menor que 10MB',
       },
       acceptedFormats: file =>
-        /((image)\/(jpeg|gif|png+))/g.test(file[0].type) ||
-        'Somente são aceitos arquivos PNG, JPEG e GIF',
+        /(?:([^:/?#]+):)?(?:([^/?#]*))?([^?#](?:jpeg|gif|png))(?:\?([^#]*))?(?:#(.*))?/g.test(
+          file[0].type
+        ) || 'Somente são aceitos arquivos PNG, JPEG e GIF',
     },
     title: {
       required: true || 'Título obrigatório',
@@ -83,7 +84,7 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
         status: 'success',
         duration: 3000,
       });
-    } catch (err) {
+    } catch {
       toast({
         title: 'Falha no cadastro',
         description: 'Ocorreu um erro ao tentar cadastrar a sua imagem.',

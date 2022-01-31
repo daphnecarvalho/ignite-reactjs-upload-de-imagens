@@ -24,7 +24,19 @@ export function ModalViewImage({
       <ModalOverlay />
       <ModalContent bgColor="pGray.900">
         <ModalBody p={2} alignSelf="center">
-          <Image src={imgUrl} maxWidth="900px" maxHeight="600px" />
+          <Image
+            src={imgUrl}
+            maxWidth={
+              document.body.offsetWidth > 900
+                ? '900px'
+                : `${document.body.offsetWidth}px`
+            }
+            maxHeight={
+              document.body.offsetHeight > 600
+                ? '600px'
+                : `${document.body.offsetHeight}px`
+            }
+          />
         </ModalBody>
         <ModalFooter bg="pGray.800" h="2rem" py="20px" borderBottomRadius="5px">
           <Link
